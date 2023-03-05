@@ -1,6 +1,5 @@
 package Colection.ArrayList;
 
-import java.rmi.MarshalException;
 import java.util.ArrayList;
 
 public class ArrayListMethods {
@@ -11,6 +10,7 @@ public class ArrayListMethods {
         arrayList.add("Ion");
         arrayList.add("Maria");
         arrayList.add("Misa");
+        arrayList.add("Vanea");
         for (String i : arrayList) {
             System.out.print(i + " ");
         }
