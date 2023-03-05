@@ -8,7 +8,7 @@ public class LinkedList1 {
         Student2 st2 = new Student2("Nicolay", 2);
         Student2 st3 = new Student2("Elena", 3);
         Student2 st4 = new Student2("Petr", 4);
-        Student2 st5 = new Student2("Mariya", 3);
+        Student2 st5 = new Student2("Maria", 3);
         LinkedList<Student2> list = new LinkedList<>();
         list.add(st1);
         list.add(st2);
