@@ -9,6 +9,7 @@ public class ArrayListEx1 {
         arrayList1.add("Laura");
         arrayList1.add("Ion");
         arrayList1.add("Maria");
+        arrayList1.add("Valea");
         System.out.println(arrayList1);
         ArrayList<String> arrayList2 = new ArrayList<>(arrayList1);
         System.out.println(arrayList2);
