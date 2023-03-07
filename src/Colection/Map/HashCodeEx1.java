@@ -2,7 +2,7 @@ package Colection.Map;
 
 import java.util.*;
 
-public class HashCodeEx1 {
+public final class HashCodeEx1 {
     public static void main(String[] args) {
         Map<Student, Double> map1 = new HashMap<>();
         Student st1 = new Student("Zaur", "Prisacaru", 3);
@@ -16,24 +16,20 @@ public class HashCodeEx1 {
 
         boolean rezult = map1.containsKey(st4);
         System.out.println(rezult);
+        System.out.println(st1.equals(st4));
         System.out.println(st1.hashCode());
         System.out.println(st4.hashCode());
 
-        for (Map.Entry<Student, Double> entry:map1.entrySet()) {
+        for (Map.Entry<Student, Double> entry : map1.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
-
-
         }
-
-
-
     }
 }
 
 class Student {
-    String name;
-    String surname;
-    int course;
+    private String name;
+    private String surname;
+    private int course;
 
     public Student(String name, String surname, int course) {
         this.name = name;
