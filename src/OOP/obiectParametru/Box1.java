@@ -1,9 +1,9 @@
 package OOP.obiectParametru;
 
 public class Box1 {
-    int lungime;
-    int latime;
-    int inaltime;
+    private int lungime;
+    private int latime;
+    private int inaltime;
 
     public Box1(int lungime, int latime, int inaltime) {
         this.lungime = lungime;
