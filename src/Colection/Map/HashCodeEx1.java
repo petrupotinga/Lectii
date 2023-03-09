@@ -4,23 +4,23 @@ import java.util.*;
 
 public final class HashCodeEx1 {
     public static void main(String[] args) {
-        Map<Student, Double> map1 = new HashMap<>();
+        Map<Student, Double> map = new HashMap<>();
         Student st1 = new Student("Zaur", "Prisacaru", 3);
         Student st2 = new Student("Marya", "Ivanova", 3);
         Student st3 = new Student("Serghey", "Petcov", 3);
-        map1.put(st1, 7.5);
-        map1.put(st2, 8.2);
-        map1.put(st3, 7.4);
-        System.out.println(map1);
+        map.put(st1, 7.5);
+        map.put(st2, 8.2);
+        map.put(st3, 7.4);
+        System.out.println(map);
         Student st4 = new Student("Zaur", "Prisacaru", 3);
 
-        boolean rezult = map1.containsKey(st4);
+        boolean rezult = map.containsKey(st4);
         System.out.println(rezult);
         System.out.println(st1.equals(st4));
         System.out.println(st1.hashCode());
         System.out.println(st4.hashCode());
 
-        for (Map.Entry<Student, Double> entry : map1.entrySet()) {
+        for (Map.Entry<Student, Double> entry : map.entrySet()) {
             System.out.println(entry.getKey() + " : " + entry.getValue());
         }
     }
