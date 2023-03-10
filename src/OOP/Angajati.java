@@ -1,9 +1,9 @@
 package OOP;
 
 public class Angajati {
-    String nume;
-    String functia;
-    int salariu;
+    private String nume;
+    private String functia;
+    private int salariu;
 
     public Angajati(String nume, String functia, int salariu) {
         this.nume = nume;
