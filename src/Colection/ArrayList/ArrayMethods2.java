@@ -10,14 +10,11 @@ public class ArrayMethods2 {
         Student st3 = new Student("Elena", 'f', 22, 3, 8.8);
         Student st4 = new Student("Petru", 'm', 22, 2, 8.4);
         Student st5 = new Student("Maria", 'f', 22, 2, 8.9);
-
         studentList.add(st1);
         studentList.add(st2);
         studentList.add(st3);
         studentList.add(st4);
         studentList.add(st5);
-
-
         System.out.println(studentList);
 
 //        Student st6 = new Student("Maria", 'f', 22, 2, 8.9);
@@ -26,7 +23,6 @@ public class ArrayMethods2 {
 //        System.out.println(studentList);
 //                           metoda indexOf
 //        System.out.println(studentList.indexOf(st5));
-
     }
 }
 
