@@ -1,6 +1,8 @@
 package OOP.Comaparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Test1 {
@@ -12,6 +14,7 @@ public class Test1 {
         list.add(emp1);
         list.add(emp2);
         list.add(emp3);
+        Collections.sort(list, new IdComarator());
         System.out.println(list);
     }
 }
@@ -39,3 +42,25 @@ class Employee {
                 '}';
     }
 }
+
+class IdComarator implements Comparator<Employee> {
+
+    @Override
+    public int compare(Employee emp1, Employee emp2) {
+        if (emp1.id == emp2.id) {
+            return 0;
+        } else if (emp1.id < emp2.id) {
+            return -1;
+        } else {
+            return 1;
+
+        }
+    }
+}
+//class NameComparator implements Comparator <Employee>{
+//
+//    @Override
+//    public int compare(Employee emp1, Employee emp2) {
+//        return emp1.name.compareTo(emp2.name);
+//    }
+//}
