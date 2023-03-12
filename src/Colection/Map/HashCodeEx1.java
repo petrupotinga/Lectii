@@ -12,24 +12,25 @@ public final class HashCodeEx1 {
         map.put(st2, 8.2);
         map.put(st3, 7.4);
         System.out.println(map);
+        System.out.println(st1.hashCode());
         Student st4 = new Student("Zaur", "Prisacaru", 3);
-
         boolean rezult = map.containsKey(st4);
         System.out.println(rezult);
-        System.out.println(st1.equals(st4));
-        System.out.println(st1.hashCode());
-        System.out.println(st4.hashCode());
-
-        for (Map.Entry<Student, Double> entry : map.entrySet()) {
-            System.out.println(entry.getKey() + " : " + entry.getValue());
-        }
+//        System.out.println(st1.equals(st4));
+//        System.out.println(st1.hashCode());
+//        System.out.println(st4.hashCode());
+//        st1.course = 4;
+//        System.out.println(st1.hashCode());
+//        for (Map.Entry<Student, Double> entry : map.entrySet()) {                // Cheie : valoare
+//            System.out.println(entry.getKey() + " : " + entry.getValue());
+//        }
     }
 }
 
-class Student {
-    private String name;
-    private String surname;
-    private int course;
+final class Student {
+    final private String name;
+    final private String surname;
+    final private int course;
 
     public Student(String name, String surname, int course) {
         this.name = name;
