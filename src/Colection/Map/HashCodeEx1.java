@@ -12,11 +12,10 @@ public final class HashCodeEx1 {
         map.put(st2, 8.2);
         map.put(st3, 7.4);
         System.out.println(map);
-        System.out.println(st1.hashCode());
         Student st4 = new Student("Zaur", "Prisacaru", 3);
         boolean rezult = map.containsKey(st4);
         System.out.println(rezult);
-//        System.out.println(st1.equals(st4));
+        System.out.println(st1.equals(st4));
 //        System.out.println(st1.hashCode());
 //        System.out.println(st4.hashCode());
 //        st1.course = 4;
