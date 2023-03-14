@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ComparableEx {
+ public class ComparableEx {
     public static void main(String[] args) {
         List<Employee1> list = new ArrayList<Employee1>();
         Employee1 emp1 = new Employee1(100, "Zaur", "Tregulov", 12545);
@@ -20,7 +20,7 @@ public class ComparableEx {
     }
 }
 
-class Employee1 implements Comparable<Employee1> {
+final class Employee1 implements Comparable<Employee1> {
     int id;
     String name;
     String surname;
