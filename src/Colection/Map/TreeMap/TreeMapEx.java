@@ -1,10 +1,11 @@
-package Colection.TreeMap;
+package Colection.Map.TreeMap;
 
+import java.util.Comparator;
 import java.util.TreeMap;
 
 public class TreeMapEx {
     public static void main(String[] args) {
-        TreeMap<Double, Student> treemap = new TreeMap<>();
+        TreeMap<Double, Student> treemap = new TreeMap<>(new Student.DescendentComaparator());
         Student st1 = new Student("Zaur", "Tregulov", 3);
         Student st2 = new Student("Ion", "Popescu", 3);
         Student st3 = new Student("Victor", "Ivanov", 3);
@@ -25,9 +26,7 @@ public class TreeMapEx {
         System.out.println();
 //        System.out.println(treemap.get(7.5));
 //        System.out.println(treemap.descendingMap());
-        System.out.println(treemap.lastEntry());
-
-
+//        System.out.println(treemap.lastEntry());
     }
 }
 
@@ -51,8 +50,15 @@ class Student {    // implements Comparable<Student> {
                 '}';
     }
 
-//    @Override
+    //    @Override
 //    public int compareTo(Student o) {
 //        return this.name.compareTo(o.name);
 //    }
+    static class DescendentComaparator implements Comparator<Double> {
+
+        @Override
+        public int compare(Double o1, Double o2) {
+            return o2.compareTo(o1);
+        }
+    }
 }
