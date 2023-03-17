@@ -16,6 +16,13 @@ public class TreeSetEx2 {
         treeSet.add(st4);
         treeSet.add(st5);
         System.out.println(treeSet);
+//        System.out.println(treeSet.first());
+//        System.out.println(treeSet.last());
+        Student st6 = new Student("Victor", 3);
+        Student st7 = new Student("Andrei", 5);
+        System.out.println(treeSet.subSet(st6,st7));
+//        System.out.println(treeSet.tailSet(st6));
+
     }
 }
 
