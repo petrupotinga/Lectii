@@ -30,8 +30,8 @@ public class TreeSetEx2 {
 }
 
 class Student implements Comparable<Student> {
-    String name;
-    int course;
+    private String name;
+    private int course;
 
     public Student(String name, int course) {
         this.name = name;
