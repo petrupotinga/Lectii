@@ -24,7 +24,7 @@ public class TreeSetEx2 {
 //        System.out.println(treeSet.subSet(st6,st7));
 //        System.out.println(treeSet.tailSet(st6));
         System.out.println(st3.equals(st6));
-        System.out.println(st3.hashCode()==st6.hashCode());
+        System.out.println(st3.hashCode() == st6.hashCode());
 
     }
 }
