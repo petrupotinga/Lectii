@@ -31,8 +31,6 @@ class Today {
             case Sunday:
                 System.out.println("Ne odihnim");
                 break;
-
         }
-
     }
 }
