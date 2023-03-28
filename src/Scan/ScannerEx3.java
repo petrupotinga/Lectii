@@ -12,18 +12,17 @@ public class ScannerEx3 {
         int suma = x + y;
         System.out.println(x);
         System.out.println(y);
-        System.out.println(x + " + " + y + " = ");
-        try {
+        while (true) {
+            System.out.println(x + " + " + y + " = ");
             scanner = new Scanner(System.in);
             int raspuns = scanner.nextInt();
-            System.out.println("raspunsul este :" + raspuns);
+            System.out.println("raspunsul primit :" + raspuns);
             if (suma == raspuns) {
-                System.out.println("raspuns Corect");
+                System.out.println("raspuns corect");
+                break;
             } else {
-                System.out.println("raspuns gresit");
+                System.out.println("raspuns gresit, mai incearca: ");
             }
-        } finally {
-            scanner.close();
         }
     }
 }
