@@ -14,7 +14,6 @@ public class ScannerEx3 {
             int x = r.nextInt(10) + 1;
             int y = r.nextInt(10) + 1;
             int suma = x + y;
-
             System.out.println(x);
             System.out.println(y);
             String exercitiu = x + " + " + y + " = ";
