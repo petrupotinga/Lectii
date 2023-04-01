@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class ScannerEx3 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        List<String> raspunsuri = new ArrayList<>();
+        List<ExercitiiGresite> raspunsuri = new ArrayList<>();
         Random r = new Random();
         for (int i = 1; i <= 3; i++) {
             int x = r.nextInt(10) + 1;
@@ -16,6 +16,7 @@ public class ScannerEx3 {
             int suma = x + y;
             System.out.println(x);
             System.out.println(y);
+            ExercitiiGresite ex = new ExercitiiGresite(x,y,suma);
             String exercitiu = x + " + " + y + " = ";
             System.out.println(exercitiu);
             int raspuns = scanner.nextInt();
@@ -24,10 +25,9 @@ public class ScannerEx3 {
                 System.out.println("raspuns corect, Bravo!");
             }  else {
                 System.out.println("raspuns gresit: ");
-                raspunsuri.add(exercitiu);
+                raspunsuri.add(ex);
             }
         }
-
         scanner.close();
         System.out.println(raspunsuri);
     }
