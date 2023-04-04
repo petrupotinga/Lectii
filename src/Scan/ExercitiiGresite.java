@@ -9,11 +9,11 @@ public class ExercitiiGresite {
         this.x = x;
         this.y = y;
         this.suma = suma;
-
     }
-
     @Override
     public String toString() {
-        return x + " + " + y + " = ?";
+        return x + " + " + y + " = ";
     }
+
 }
+
