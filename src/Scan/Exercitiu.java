@@ -3,25 +3,19 @@ package Scan;
 public class Exercitiu {
     int x;
     int y;
-    int suma;
+    int rezultatulOperatiei;
+    String semn;
 
-    public Exercitiu(int x, int y, int suma) {
+    public Exercitiu(int x, int y, int rezultatulOperatiei, String semn) {
         this.x = x;
         this.y = y;
-        this.suma = suma;
-    }
-
-    public String showExercitiu() {
-        return x + " + " + y + " = ";
+        this.rezultatulOperatiei = rezultatulOperatiei;
+        this.semn = semn;
     }
 
     @Override
     public String toString() {
-        return "Exercitiu{" +
-                "x=" + x +
-                ", y=" + y +
-                ", suma=" + suma +
-                '}';
+        return x + "" + semn + "" + y + " = ";
     }
 }
 
