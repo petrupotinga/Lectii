@@ -1,4 +1,4 @@
-package Scan;
+package Proiecte;
 
 public class Exercitiu {
     int x;
@@ -15,7 +15,7 @@ public class Exercitiu {
 
     @Override
     public String toString() {
-        return x + "" + semn + "" + y + " = ";
+        return x + semn + y + " = ";
     }
 }
 
