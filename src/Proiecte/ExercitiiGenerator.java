@@ -4,17 +4,23 @@ import java.util.*;
 
 public class ExercitiiGenerator {
     public static void main(String[] args) {
-        final int NUMARUL_TOTAL_DE_EXERCITII = 3;
+        final int NUMARUL_TOTAL_DE_EXERCITII = 10;
         String semn;
         int rezultatulOperatiei;
         Scanner scanner = new Scanner(System.in);
         List<Exercitiu> exercitiiGresite = new ArrayList<>();
         Random r = new Random();
         for (int i = 0; i < NUMARUL_TOTAL_DE_EXERCITII; i++) {
-            int MIN = 1;
-            int MAX = 10;
-            int x = r.nextInt(MAX - MIN + 1) + MIN;
-            int y = r.nextInt(x - MIN) + MIN;
+            int x = r.nextInt(10) + 1;
+            int y = r.nextInt(10) + 1;
+//            System.out.println(x);
+//            System.out.println(y);
+            if (x < y) {
+                int temp = x;
+                x = y;
+                y = temp;
+                System.out.println("Schimbare de loc intre numere!");
+            }
             int operatia = r.nextInt(2);
             if (operatia == 0) {
                 rezultatulOperatiei = x + y;
@@ -50,5 +56,6 @@ public class ExercitiiGenerator {
         scanner.close();
     }
 }
+
 
 
