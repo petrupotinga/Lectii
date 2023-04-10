@@ -4,9 +4,9 @@ import java.util.*;
 
 public class ExercitiiGenerator {
     public static void main(String[] args) {
+        List<Exercitiu> exercitiiGresite = new ArrayList<>();
         final int NUMARUL_TOTAL_DE_EXERCITII = 10;
         Scanner scanner = new Scanner(System.in);
-        List<Exercitiu> exercitiiGresite = new ArrayList<>();
         for (int i = 0; i < NUMARUL_TOTAL_DE_EXERCITII; i++) {
             Generator generator = new Generator();
             Exercitiu exercitiu = generator.generatorExercitiu();
