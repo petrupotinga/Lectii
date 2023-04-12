@@ -7,6 +7,10 @@ public class Person implements Info {
         this.name = name;
     }
 
+    public void sayHello() {
+        System.out.println("Hello!");
+    }
+
     @Override
     public void showInfo() {
         System.out.println("Numele este : " + name);
