@@ -1,4 +1,4 @@
-package OOP.Interfaces;
+package OOP.Principii.Abstractia.Interface;
 
 public class Animal implements Info {
     private int id;

@@ -7,11 +7,11 @@ public class Baseclass {
 class Subclass extends Baseclass {
     String myStr;
 
-    public void printdetails() {//Baseclass and Subclass have variables with same name
+    public void printdetails() {
 
-        super.myStr = "Super"; //refers to parent class member
+        super.myStr = "Super";
         myStr = "Sub";
-        System.out.println("Superclass myStr :" + super.myStr + " și Subclass myStr:' + myStr" );
+        System.out.println("Superclass myStr :" + super.myStr + " și Subclass myStr:' + myStr");
     }
 }
 

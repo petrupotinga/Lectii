@@ -1,4 +1,4 @@
-package OOP.Interfaces;
+package OOP.Principii.Abstractia.Interface;
 
 public class Person implements Info {
     private String name;
