@@ -1,10 +1,10 @@
 package Proiecte;
 
 public class Exercitiu {
-    int x;
-    int y;
-    int rezultatulOperatiei;
-    String semn;
+    private final int x;
+    private final int y;
+    private final int rezultatulOperatiei;
+    private final String semn;
 
     public Exercitiu(int x, int y, int rezultatulOperatiei, String semn) {
         this.x = x;
@@ -12,7 +12,10 @@ public class Exercitiu {
         this.rezultatulOperatiei = rezultatulOperatiei;
         this.semn = semn;
     }
-
+    
+    public int getRezultatulOperatiei() {
+        return rezultatulOperatiei;
+    }
     @Override
     public String toString() {
         return x + semn + y + " = ";
