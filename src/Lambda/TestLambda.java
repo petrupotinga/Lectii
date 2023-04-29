@@ -1,6 +1,8 @@
 package Lambda;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class TestLambda {
@@ -30,14 +32,14 @@ public class TestLambda {
 //                .map(student -> student.avgGrade)
 //                .toList();
 
-        StudentInfo info = new StudentInfo();
-        info.testStudents(students, (Student s) -> {
-            return s.age < 30;
-        });
-        info.testStudents(students, s -> s.age <= 18);
-        info.testStudents(students, s -> s.age == 18);
-        info.testStudents(students, s -> s.name.startsWith("A"));
-
+//        StudentInfo info = new StudentInfo();
+//        info.testStudents(students, (Student s) -> {
+//            return s.age < 30;
+//        });
+//        info.testStudents(students, s -> s.age <= 18);
+//        info.testStudents(students, s -> s.age == 18);
+//        info.testStudents(students, s -> s.name.startsWith("A"));
+//
 
 // 1
 //        info.testStudents(students, new CheckOverGrade());
@@ -49,16 +51,25 @@ public class TestLambda {
 //            }
 //        });
 // 3
-        info.testStudents(students, (Student s) -> {
-            return s.age < 30;
-        });
-// 4
-        info.testStudents(students, student -> {
-            return student.sex == 'f';
-        });
-// 5
-        info.testStudents(students, student -> student.sex == 'f');
+//        info.testStudents(students, (Student s) -> {
+//            return s.age < 30;
+//        });
+//// 4
+//        info.testStudents(students, student -> {
+//            return student.sex == 'f';
+//        });
+//// 5
+//        info.testStudents(students, student -> student.sex == 'f');
 
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student s1, Student s2) {
+                return s1.course- s2.course;
+            }
+        });
+        System.out.println(students);
+        Collections.sort(students, (stud1, stud2)->stud1.course-stud2.course);
+        System.out.println(students);
     }
 }
 
@@ -68,20 +79,20 @@ public class TestLambda {
 //    public boolean checks(Student s) {
 //        return s.sex == 'f';
 //    }
+////}
+//
+//interface StudentChecks {
+//    boolean checks(Student s);
 //}
-
-interface StudentChecks {
-    boolean checks(Student s);
-}
-
-class StudentInfo {
-    void testStudents(List<Student> al1, StudentChecks sc) {
-        for (Student s : al1) {
-            if ( sc.checks(s)) {
-                System.out.println(s);
-            }
-        }
-    }
+//
+//class StudentInfo {
+//    void testStudents(List<Student> al1, StudentChecks sc) {
+//        for (Student s : al1) {
+//            if ( sc.checks(s)) {
+//                System.out.println(s);
+//            }
+//        }
+//    }
 //    void printStudentsOverGrade(ArrayList<Student> al1, double grade) {
 //        for (Student s : al1) {
 //            if (s.avgGrade > grade) {
@@ -89,4 +100,3 @@ class StudentInfo {
 //            }
 //        }
 //    }
-}
