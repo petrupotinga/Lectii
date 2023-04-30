@@ -1,6 +1,7 @@
 package Lambda.Supplier;
 
 import java.util.ArrayList;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class TestCar {
@@ -11,6 +12,9 @@ public class TestCar {
         }
         return al;
     }
+    public static void changerCar(Car car, Consumer<Car> carConsumer){
+        carConsumer.accept(car);
+    }
 
     public static void main(String[] args) {
         ArrayList<Car> ourCars = createThreeCars(()->
@@ -18,6 +22,10 @@ public class TestCar {
                 "Silver metalic",
                 1.6));
         System.out.println("Our cars: " + ourCars);
+
+        changerCar(ourCars.get(0), car -> {car.color="red";
+                car.engine= 2.4;
+            System.out.println("upgaraded car: " + car);});
 
     }
 }
