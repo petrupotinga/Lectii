@@ -2,6 +2,7 @@ package Lambda;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 public class TestLambda {
@@ -46,7 +47,17 @@ public class TestLambda {
 //            return student.sex == 'f';
 //        });
 //// 5
+//        Function<Student, Double> f = student -> student.avgGrade;
+        double rez = avgOfSmth(students, stud -> (double) stud.age);
+        System.out.println(rez);
+    }
 
+    private static double avgOfSmth(List<Student> list, Function<Student, Double> f) {
+        double rezult = 0;
+        for (Student st : list) {
+            rezult += f.apply(st);
+        }
+        return rezult / list.size();
     }
 }
 
