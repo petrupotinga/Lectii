@@ -24,6 +24,21 @@ public class TestLambda {
         Predicate<Student> p2 = student -> student.sex == 'm';
 
         info.testStudents(students, p1.or(p2));
+
+        List<String> numeBarbati = new ArrayList<>();
+        for(Student s :students) {
+            if (s.sex == 'm') {
+                numeBarbati.add(s.name);
+            }
+        }
+
+        List<Double> doubles = students.stream()
+                .filter(s -> s.sex == 'm')
+                .filter(s -> s.avgGrade > 8)
+                .map(student -> student.avgGrade)
+                .toList();
+
+
 //        info.testStudents(students, (Student s) -> {
 //            return s.age < 30;
 //        });
@@ -101,15 +116,3 @@ class StudentInfo {
 //        System.out.println(students);
 
 
-//        List<String> numeBarbati = new ArrayList<>();
-//        for (Student s : students) {
-//            if (s.sex == 'm') {
-//                numeBarbati.add(s.name);
-//            }
-//        }
-
-//        List<Double> doubles = students.stream()
-//                .filter(s -> s.sex == 'm')
-//                .filter(s -> s.avgGrade > 8)
-//                .map(student -> student.avgGrade)
-//                .toList();
