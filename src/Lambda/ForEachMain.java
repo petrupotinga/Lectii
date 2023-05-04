@@ -10,8 +10,10 @@ public class ForEachMain {
         numbers.add(9);
         numbers.add(8);
         numbers.add(1);
-        Consumer<Integer> method = (n) -> { System.out.println(n); };
-        numbers.forEach( method );
-    }
+        Consumer<Integer> method = (n) -> {
+            System.out.println(n);
+        };
+        numbers.forEach(method);
     }
 }
+
