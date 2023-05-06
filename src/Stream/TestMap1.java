@@ -1,6 +1,7 @@
 package Stream;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,5 +19,11 @@ public class TestMap1 {
      List<Integer> list2 =list.stream().map(element->
              element.length()).collect(Collectors.toList());
         System.out.println(list);
+        int[]array = {5,9,3,8,1};
+        Arrays.stream(array).map(e->{ if(e%3==0){
+        e = e/3;
+        } return e;
+        }).toArray();
+        System.out.println(Arrays.toString(array));
     }
 }
