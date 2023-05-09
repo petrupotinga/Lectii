@@ -7,8 +7,6 @@ public class Student {
     int course;
     double avgGrade;
 
-//    SELECT * FROM students WHERE sex = m AND avg > 5;
-
 
     public Student(String name, char sex, int age, int course, double avgGrade) {
         this.name = name;
