@@ -11,7 +11,10 @@ public class TestForEach {
 //        });
 //        Arrays.stream(array).forEach(System.out::println);
 //        Arrays.stream(array).forEach(Utils::myMethod);
-        Arrays.stream(array).forEach(el->Utils.myMethod(el));
+//        Arrays.stream(array).forEach(el->Utils.myMethod(el));
+
+        array = Arrays.stream(array).sorted().toArray();
+        System.out.println(Arrays.toString(array));
     }
 }
 
