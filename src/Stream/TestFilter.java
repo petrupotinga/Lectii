@@ -2,7 +2,6 @@ package Stream;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class TestFilter {
     public static void main(String[] args) {
@@ -22,12 +21,23 @@ public class TestFilter {
 //                collect(Collectors.toList());
 //        System.out.println(students);
 
-students= students.stream().sorted((x,y)->x.getName().compareTo(y.getName()))
-        .collect(Collectors.toList());
-        System.out.println(students);
+//students= students.stream().sorted((x,y)->x.getName().compareTo(y.getName()))
+//        .collect(Collectors.toList());
+//        System.out.println(students);
+
+        students.stream().map(e->{e.setName(e.getName().toUpperCase());
+        return e;}).filter(e->e.getSex()== 'f').sorted((x,y)->x.getAge()-
+                y.getAge()).forEach(e-> System.out.println(e));
 
     }
 }
+
+
+
+
+
+
+
 
 class Student {
     private String name;
