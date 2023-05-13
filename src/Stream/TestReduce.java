@@ -25,7 +25,14 @@ public class TestReduce {
 //        if (o.isPresent()) {
 //            System.out.println(o.get());
 //        } else {
-//            System.out.println("Not present");
-//        }
+//            System.out.println("Not present");}
+        List<String> list3 = new ArrayList<>();
+        list3.add("salut");
+        list3.add("cum viata");
+        list3.add("ok");
+        list3.add("poka");
+        String rezult3 = list3.stream().reduce((a, e) -> a + "" + e).get();
+        System.out.println(rezult3);
+        }
     }
-}
+
