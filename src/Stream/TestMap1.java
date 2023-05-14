@@ -32,8 +32,7 @@ public class TestMap1 {
         set.add("poka");
         System.out.println(set);
         Set<Integer> set2 = set.stream().map(String::length).collect(toSet());
-        List<Integer> list3 = set.stream().map(String::length).collect(toList());
-        System.out.println(set2);
+        List<Integer> list3 = set.stream().map(String::length).toList();        System.out.println(set2);
         System.out.println(list3);
     }
 }
