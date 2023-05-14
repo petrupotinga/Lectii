@@ -1,7 +1,9 @@
 package Stream;
 
 import java.util.*;
-import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
 public class TestMap1 {
     public static void main(String[] args) {
@@ -15,15 +17,13 @@ public class TestMap1 {
 //            list.set(i, String.valueOf(list.get(i).length()));
 //        }
         List<Integer> list2 = list.stream().map(element ->
-                element.length()).collect(Collectors.toList());
+                element.length()).collect(toList());
 //        System.out.println(list);
         int[] array = {5, 9, 3, 8, 1};
         Arrays.stream(array).map(e -> {
-            if (e % 3 == 0) {
-                e = e / 3;
-            }
-            return e;
+            return e % 3 == 0 ? e / 3 : e;
         }).toArray();
+
 //        System.out.println(Arrays.toString(array));
         Set<String> set = new TreeSet<>();
         set.add("salut");
@@ -31,8 +31,8 @@ public class TestMap1 {
         set.add("ok");
         set.add("poka");
         System.out.println(set);
-        Set<Integer> set2 = set.stream().map(e -> e.length()).collect(Collectors.toSet());
-        List<Integer> list3 = set.stream().map(e -> e.length()).collect(Collectors.toList());
+        Set<Integer> set2 = set.stream().map(String::length).collect(toSet());
+        List<Integer> list3 = set.stream().map(String::length).collect(toList());
         System.out.println(set2);
         System.out.println(list3);
     }
