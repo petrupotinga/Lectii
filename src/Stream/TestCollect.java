@@ -18,13 +18,19 @@ public class TestCollect {
         students.add(st3);
         students.add(st4);
         students.add(st5);
-
-        Map<Integer, List<Student>> map = students.stream().map(el -> {
-            el.setName(el.getName().toUpperCase());
-            return el;
-        }).collect(Collectors.groupingBy(Student::getCourse));
-        for (Map.Entry<Integer, List<Student>> entry : map.entrySet()) {
+//
+//        Map<Integer, List<Student>> map = students.stream().map(el -> {
+//            el.setName(el.getName().toUpperCase());
+//            return el;
+//        }).collect(Collectors.groupingBy(Student::getCourse));
+//        for (Map.Entry<Integer, List<Student>> entry : map.entrySet()) {
+//            System.out.println(entry.getKey() + ": " + entry.getValue().toString());
+//        }
+        Map<Boolean, List<Student>> map = students.stream()
+                .collect(Collectors.partitioningBy(el->el.getAvgGrade()>7));
+        for (Map.Entry<Boolean, List<Student>> entry : map.entrySet()) {
             System.out.println(entry.getKey() + ": " + entry.getValue().toString());
         }
+
     }
 }
