@@ -17,10 +17,16 @@ public class TestMinMax {
         students.add(st4);
         students.add(st5);
 
-        Student min = students.stream().min((x, y) -> x.getAge() - y.getAge()).get();
-        System.out.println(min);
-        Student max = students.stream().max((x, y) -> x.getAge() - y.getAge()).get();
-        System.out.println(max);
+//        Student min = students.stream().min((x, y) -> x.getAge() - y.getAge()).get();
+//        System.out.println(min);
+//        Student max = students.stream().max((x, y) -> x.getAge() - y.getAge()).get();
+//        System.out.println(max);
+
+        students.stream().filter(e->e.getAge()>20).forEach(System.out::println);
+        System.out.println("-------------------");
+        students.stream().filter(e->e.getAge()>20).limit(2).forEach(System.out::println);
+        System.out.println("-------------------");
+        students.stream().filter(e->e.getAge()>20).skip(2).forEach(System.out::println);
 
     }
 }
