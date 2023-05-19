@@ -25,9 +25,14 @@ public class TestFilter {
 //        .collect(Collectors.toList());
 //        System.out.println(students);
 
-        students.stream().map(e->{e.setName(e.getName().toUpperCase());
-        return e;}).filter(e->e.getSex()== 'f').sorted((x,y)->x.getAge()-
-                y.getAge()).forEach(e-> System.out.println(e));
+//        students.stream().map(e->{e.setName(e.getName().toUpperCase());
+//        return e;}).filter(e->e.getSex()== 'f').sorted((x,y)->x.getAge()-
+//                y.getAge()).forEach(e-> System.out.println(e));
+
+        Student first = students.stream().map(e->{e.setName(e.getName().toUpperCase());
+            return e;}).filter(e->e.getSex()== 'f').sorted((x,y)->x.getAge()-
+                y.getAge()).findFirst().get();
+        System.out.println(first);
 
     }
 }
