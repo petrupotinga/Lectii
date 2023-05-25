@@ -8,4 +8,11 @@ soluția pentru MS Access:SELECT Count(*) AS DistinctCountries
 SELECT * FROM Customers   WHERE Country='Mexico';
 SELECT * FROM Customers  WHERE CustomerID=1;
 SELECT * FROM Customers  WHERE Country='Germany' AND City='Berlin';
-
+SELECT * FROM Customers WHERE City='Berlin' OR City='München';
+SELECT * FROM Customers WHERE Country='Germany' OR Country='Spain';
+SELECT * FROM Customers WHERE NOT Country='Germany';
+SELECT * FROM Customers WHERE Country='Germany' AND (City='Berlin' OR City='München');
+SELECT * FROM Customers WHERE NOT Country='Germany' AND NOT Country='USA';
+SELECT * FROM Customers ORDER BY Country;
+SELECT * FROM Customers ORDER BY Country DESC;
+SELECT * FROM Customers ORDER BY Country, CustomerName;
