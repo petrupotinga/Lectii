@@ -61,3 +61,9 @@ SELECT column_name(s) FROM table1 FULL OUTER JOIN table2 ON table1.column_name =
 SELECT Customers.CustomerName, Orders.OrderID FROM Customers FULL OUTER JOIN Orders ON Customers.CustomerID=Orders.CustomerID ORDER BY Customers.CustomerName;
 SELECT column_name(s) FROM table1 T1, table1 T2 WHERE condition;
 SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B WHERE A.CustomerID <> B.CustomerID AND A.City = B.City ORDER BY A.City;
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City FROM Customers A, Customers B WHERE A.CustomerID <> B.CustomerID  AND A.City = B.City ORDER BY A.City;
+SELECT City FROM Cus tomers UNION SELECT City FROM Suppliers ORDER BY City;
+SELECT City FROM Customers UNION ALL SELECT City FROM Suppliers ORDER BY City;
+SELECT City, Country FROM Customers WHERE Country='Germany' UNION SELECT City, Country FROM Suppliers WHERE Country='Germany' ORDER BY City;
+SELECT City, Country FROM Customers WHERE Country='Germany' UNION ALL SELECT City, Country FROM Suppliers WHERE Country='Germany' ORDER BY City;
+SELECT 'Customer' AS Type, ContactName, City, Country FROM Customers UNION SELECT 'Supplier', ContactName, City, Country FROM Suppliers;
