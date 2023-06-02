@@ -90,3 +90,5 @@ SELECT ProductName FROM Products WHERE ProductID = ANY  (SELECT ProductID  FROM 
 SELECT ProductName FROM Products WHERE ProductID = ANY  (SELECT ProductID  FROM OrderDetails  WHERE Quantity > 1000);
 SELECT ALL ProductName FROM Products WHERE TRUE;
 SELECT ProductName FROM Products WHERE ProductID = ALL  (SELECT ProductID  FROM OrderDetails  WHERE Quantity = 10);
+SELECT * INTO newtable [IN externaldb] FROM oldtable WHERE condition;
+SELECT column1, column2, column3, ... INTO newtable [IN externaldb] FROM oldtable WHERE condition;
