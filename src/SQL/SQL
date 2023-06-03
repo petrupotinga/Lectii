@@ -92,3 +92,5 @@ SELECT ALL ProductName FROM Products WHERE TRUE;
 SELECT ProductName FROM Products WHERE ProductID = ALL  (SELECT ProductID  FROM OrderDetails  WHERE Quantity = 10);
 SELECT * INTO newtable [IN externaldb] FROM oldtable WHERE condition;
 SELECT column1, column2, column3, ... INTO newtable [IN externaldb] FROM oldtable WHERE condition;
+INSERT INTO Customers (CustomerName, City, Country) SELECT SupplierName, City, Country FROM Suppliers;
+INSERT INTO Customers (CustomerName, City, Country) SELECT SupplierName, City, Country FROM Suppliers WHERE Country='Germany';
