@@ -105,3 +105,7 @@ SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0)) FROM 
 SELECT ProductName, UnitPrice * (UnitsInStock + IIF(IsNull(UnitsOnOrder), 0, UnitsOnOrder)) FROM Products;
 SELECT ProductName, UnitPrice * (UnitsInStock + NVL(UnitsOnOrder, 0)) FROM Products;
 SELECT ProductName, UnitPrice * (UnitsInStock + COALESCE(UnitsOnOrder, 0)) FROM Products;
+CREATE PROCEDURE procedure_name AS sql_statement GO;
+CREATE PROCEDURE SelectAllCustomers AS SELECT * FROM Customers GO;
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30) AS SELECT * FROM Customers WHERE City = @City GO;
+CREATE PROCEDURE SelectAllCustomers @City nvarchar(30), @PostalCode nvarchar(10) AS SELECT * FROM Customers WHERE City = @City AND PostalCode = @PostalCode GO;
