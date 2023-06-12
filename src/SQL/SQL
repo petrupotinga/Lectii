@@ -191,6 +191,13 @@ CREATE TABLE Persons (ID int NOT NULL,LastName varchar(255) NOT NULL,FirstName v
 CREATE TABLE Persons ( ID int NOT NULL,LastName varchar(255) NOT NULL, FirstName varchar(255),  Age int, CONSTRAINT UC_Person UNIQUE (ID,LastName));
 ALTER TABLE Persons ADD CONSTRAINT UC_Person UNIQUE (ID,LastName);
 ALTER TABLE Persons DROP CONSTRAINT UC_Person;
+CREATE TABLE Persons (ID int NOT NULL,LastName varchar(255) NOT NULL, FirstName varchar(255),Age int, PRIMARY KEY (ID));
+CREATE TABLE Persons (ID int NOT NULL PRIMARY KEY,LastName varchar(255) NOT NULL,FirstName varchar(255), Age int);
+CREATE TABLE Persons (ID int NOT NULL,LastName varchar(255) NOT NULL, FirstName varchar(255),Age int,CONSTRAINT PK_Person PRIMARY KEY (ID,LastName));
+ALTER TABLE Persons ADD PRIMARY KEY (ID);
+ALTER TABLE Persons ADD CONSTRAINT PK_Person PRIMARY KEY (ID,LastName);
+ALTER TABLE Persons DROP PRIMARY KEY;.
+ALTER TABLE Persons DROP CONSTRAINT PK_Person;
 
 
 
