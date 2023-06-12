@@ -183,6 +183,14 @@ ALTER TABLE table_name ALTER COLUMN column_name datatype;
 ALTER TABLE table_name MODIFY COLUMN column_name datatype;
 ALTER TABLE table_name MODIFY column_name datatype;
 ALTER TABLE Persons ADD DateOfBirth date; ALTER TABLE Persons ALTER COLUMN DateOfBirth year;
+CREATE TABLE table_name (column1 datatype constraint,column2 datatype constraint, column3 datatype constraint,....);
+CREATE TABLE Persons (ID int NOT NULL,LastName varchar(255) NOT NULL, FirstName varchar(255) NOT NULL,Age int);
+ALTER TABLE Persons ALTER COLUMN Age int NOT NULL;
+CREATE TABLE Persons (ID int NOT NULL UNIQUE,LastName varchar(255) NOT NULL,FirstName varchar(255),Age int);
+CREATE TABLE Persons (ID int NOT NULL,LastName varchar(255) NOT NULL,FirstName varchar(255), Age int,  UNIQUE (ID));
+CREATE TABLE Persons ( ID int NOT NULL,LastName varchar(255) NOT NULL, FirstName varchar(255),  Age int, CONSTRAINT UC_Person UNIQUE (ID,LastName));
+ALTER TABLE Persons ADD CONSTRAINT UC_Person UNIQUE (ID,LastName);
+ALTER TABLE Persons DROP CONSTRAINT UC_Person;
 
 
 
