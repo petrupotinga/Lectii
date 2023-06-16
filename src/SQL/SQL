@@ -234,4 +234,11 @@ txtUserId = getRequestString("UserId"); txtSQL = "SELECT * FROM Users WHERE User
 txtNam = getRequestString("CustomerName"); txtAdd = getRequestString("Address"); txtCit = getRequestString("City"); txtSQL = "INSERT INTO Customers (CustomerName,Address,City) Values(@0,@1,@2)"; db.Execute(txtSQL,txtNam,txtAdd,txtCit);
 txtUserId = getRequestString("UserId"); sql = "SELECT * FROM Customers WHERE CustomerId = @0"; command = new SqlCommand(sql); command.Parameters.AddWithValue("@0",txtUserId); command.ExecuteReader();
 
-
+String Data Types
+CHAR(size),VARCHAR(size),BINARY(size),VARBINARY(size), TINYBLOB,TINYTEXT,TEXT(size),BLOB(size),MEDIUMTEXT,MEDIUMBLOB,
+LONGTEXT,LONGBLOB,ENUM(val1, val2, val3, ...),SET(val1, val2, val3, ...).
+Numeric Data Types
+BIT(size), TINYINT(size),BOOL,BOOLEAN,SMALLINT(size),MEDIUMINT(size),INT(size),INTEGER(size),BIGINT(size),FLOAT(size, d),
+FLOAT(p),DOUBLE(size, d),DOUBLE PRECISION(size, d),DECIMAL(size, d),DEC(size, d)
+Date and Time Data Types
+DATE, DATETIME(fsp), TIMESTAMP(fsp),TIME(fsp),YEAR
