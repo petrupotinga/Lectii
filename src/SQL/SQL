@@ -254,3 +254,6 @@ datetime,datetime2,smalldatetime,date,time,datetimeoffset,timestamp
 Other Data Types
 sql_variant,uniqueidentifier,xml,cursor,table
 
+MS Access Data Types
+Text,Memo,Byte,Integer,Long,Single,Double,Currency,AutoNumber,Date/Time,Yes/No,Ole Object,Hyperlink,Lookup Wizard
+
