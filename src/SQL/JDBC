@@ -1,0 +1,6 @@
+     JDBC (Java Database Connectivity) este o interfață de programare pentru limbajul Java care permite aplicațiilor Java
+să interacționeze cu baze de date relaționale. JDBC oferă un set de clase și metode pentru a crea conexiuni cu baza
+de date, a executa interogări și a manipula datele în baza de date.
+     Prin intermediul JDBC, dezvoltatorii pot crea conexiuni la diverse sisteme de gestionare a bazelor de date
+(cum ar fi MySQL, Oracle, Microsoft SQL Server etc.) și pot utiliza instrucțiuni SQL pentru a interoga și manipula
+datele în aceste baze de date.
