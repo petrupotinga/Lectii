@@ -4,3 +4,12 @@ de date, a executa interogări și a manipula datele în baza de date.
      Prin intermediul JDBC, dezvoltatorii pot crea conexiuni la diverse sisteme de gestionare a bazelor de date
 (cum ar fi MySQL, Oracle, Microsoft SQL Server etc.) și pot utiliza instrucțiuni SQL pentru a interoga și manipula
 datele în aceste baze de date.
+     API-ul JDBC folosește drivere JDBC pentru a se conecta la baza de date. Există patru tipuri de drivere JDBC:
+     1.JDBC-ODBC Bridge Driver,
+     2.Native Driver,
+     3.Network Protocol Driver, and
+     4.Thin Driver
+Putem folosi API-ul JDBC pentru a gestiona baza de date folosind programul Java și putem efectua următoarele activități:
+     1.Conectați-vă la baza de date
+     2.Executați interogări și actualizați instrucțiunile în baza de date
+     3.Preluați rezultatul primit din baza de date.
