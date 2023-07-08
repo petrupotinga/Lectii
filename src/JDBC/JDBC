@@ -1,0 +1,22 @@
+JDBC (Java Database Connectivity) este o interfață de programare pentru limbajul Java care permite aplicații Java
+să interacționeze cu baze de date relaționale. JDBC oferă un set de clase și metode pentru a crea conexiuni cu baza
+de date, a executa interogări și a manipula date în baza de date.
+     Prin intermediul JDBC, dezvoltatorii pot crea conexiuni la diverse sisteme de gestionare a bazelor de date
+(cum ar fi MySQL, Oracle, Microsoft SQL Server etc.) și pot utiliza instrucțiuni SQL pentru a interoga și manipula
+date în aceste baze de date.
+     Condițiile preliminare pentru implementarea JDBC în aplicațiile Java sunt următoarele:
+1. Java ar trebui instalat în sistemul în care doriți să creați aplicația Java și să utilizați JDBC.
+2. Ar trebui să aveți fișiere jar de driver JDBC adecvate pentru a vă conecta la SGBD. Fiecare bază de date conține
+fișiere jar diferite ale driverului JDBC.
+     Tipuri de drivere în JDBC:
+Driver tipul 1 (JDBC-ODBC Bridge Driver)
+Driver tipul 2 (Native-API Driver)
+Driver tipul 3 (Network Protocol Driver)
+Driver tipul 4 (Thin Driver)
+     Pași de conectare JDBC:
+1.Import pachete
+2.Încărcarea driverului
+3.Stabilirea conexiunii
+4.Crearea și executarea declarației
+5.Obținerea rezultatelor
+6.Închiderea conexiunii
