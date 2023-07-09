@@ -5,7 +5,7 @@ import java.sql.SQLException;
 
 public class UserDelete {
     // Metoda pentru ștergerea unui utilizator în baza de date
-    public void deleteUser(int userId) {
+    public void deleteUser(String username) {
         Connection connection = null;
         PreparedStatement statement = null;
 
@@ -14,18 +14,18 @@ public class UserDelete {
             connection = YourDatabaseConnection.getConnection();
 
             // Definirea interogării SQL pentru ștergere
-            String query = "DELETE FROM users WHERE id = ?";
+            String query = "DELETE FROM users WHERE username = ?";
 
             // Crearea obiectului PreparedStatement
             statement = connection.prepareStatement(query);
 
-            // Setarea valorii parametrului
-            statement.setInt(1, userId);
+            // Setarea valorilor parametrilor
+            statement.setString(1, username);
 
             // Executarea interogării de ștergere
             statement.executeUpdate();
 
-            System.out.println("Utilizatorul cu ID-ul " + userId + " a fost șters din baza de date.");
+            System.out.println("Utilizatorul a fost șters din baza de date.");
         } catch (SQLException e) {
             System.out.println("A apărut o eroare la ștergerea utilizatorului: " + e.getMessage());
         } finally {
