@@ -20,3 +20,14 @@ Driver tipul 4 (Thin Driver)
 4.Crearea și executarea declarației
 5.Obținerea rezultatelor
 6.Închiderea conexiunii
+     Indiferent de driverul JDBC, se adăuga următoarea declarație de import în programul Java.
+import java.sql.*;
+     Se încărca driverul în următoarele 2 moduri:
+1.Class.forName ()
+2.DriverManager.registerDriver ()
+     Se stabileste conexiunea
+Metoda getConnection () este o metodă supraîncărcată. Cele 2 metode sunt:
+
+getConnection (URL, nume de utilizator, parolă); - Are 3 parametri URL, nume de utilizator, parolă.
+getConnection (URL); - Are un singur parametru. URL-ul are și un nume de utilizator și o parolă.
+
