@@ -30,4 +30,19 @@ Metoda getConnection () este o metodă supraîncărcată. Cele 2 metode sunt:
 
 getConnection (URL, nume de utilizator, parolă); - Are 3 parametri URL, nume de utilizator, parolă.
 getConnection (URL); - Are un singur parametru. URL-ul are și un nume de utilizator și o parolă.
-
+Exemplu:
+Connection con = DriverManager.getConnection(jdbc:oracle:thin:@localhost:1521:xe,System,Pass123@)
+     Există 3 interfețe cu instrucțiuni disponibile în pachetul java.sqlȘ
+1.Statement statemnt1 = conn.createStatement();
+2.String select_query = “Select * from states where state_id = 1”; PreparedStatement prpstmt = conn.prepareStatement(select_query);
+3.CallableStatementcallStmt = con.prepareCall('{call procedures(?,?)}');
+     Executarea interogarii:
+1.ResultSet executeQuery (String sql)
+2.int executeUpdate (String sql)
+3.executare booleană (String sql)
+4.int [] executeBatch ()
+     Obțineți rezultate:
+ResultSet rs 1= statemnt1.executeQuery(QUERY));
+     Închideți conexiunea:
+conn.close();
+try(Connection conn = DriverManager.getConnection(url, user, password)) { //database connection and operation }
