@@ -1,0 +1,30 @@
+     Spring este un cadru (framework) de dezvoltare a aplicațiilor Java care facilitează crearea de aplicații de înaltă
+calitate și scalabile. Este una dintre cele mai populare opțiuni pentru dezvoltatorii Java datorită modularității,
+flexibilității și abordării sale cuprinzătoare a dezvoltării aplicațiilor.
+     Spring oferă un set bogat de caracteristici și module care pot fi utilizate pentru dezvoltarea diferitelor tipuri de
+aplicații, cum ar fi aplicații web, aplicații de nivel întreprindere, servicii web, servicii RESTful, aplicații mobile
+și multe altele.
+     Caracteristicile cheie:
+1.Inversiunea controlului (IoC): Aceasta este o caracteristică fundamentală a Spring. IoC permite Spring să preia
+controlul creării și gestionării obiectelor într-o aplicație. În loc ca dezvoltatorii să creeze manual obiecte și să
+gestioneze dependențele între ele, Spring preia această responsabilitate. Astfel, dezvoltatorii se pot concentra pe
+logica de afaceri, iar Spring se ocupă de gestionarea dependențelor.
+
+2.Injectarea dependențelor (DI): DI este strâns legată de IoC. Spring facilitează injectarea dependențelor între
+diferitele componente ale aplicației. În loc să creeze manual obiecte și să le furnizeze dependențele, Spring
+injectează automat dependențele în componente. Aceasta reduce cuplarea strânsă între componente și face aplicația mai
+modulară și mai ușor de testat.
+
+3.Spring MVC: Spring MVC (Model-View-Controller) este un modul al Spring care facilitează dezvoltarea aplicațiilor web.
+Spring MVC oferă un model flexibil de rutare a cererilor HTTP, gestionare a acțiunilor și generare a răspunsurilor.
+Prin intermediul acestui modul, dezvoltatorii pot crea ușor aplicații web robuste și scalabile.
+
+4.Integrare ușoară: Spring facilitează integrarea cu alte tehnologii și framework-uri. Oferă suport pentru integrarea
+cu ORM (Object-Relational Mapping) cum ar fi Hibernate, integrarea cu baze de date, servicii web, servicii RESTful,
+tehnologii de securitate și multe altele. Aceasta permite dezvoltatorilor să beneficieze de puterea și flexibilitatea
+Spring în cadrul aplicațiilor lor existente.
+
+5.Spring Boot: Spring Boot este un subproiect al Spring care se concentrează pe dezvoltarea rapidă a aplicațiilor Java.
+Spring Boot vine cu setări implicite coerente și oferă suport pentru încorporarea serverului web, gestionarea
+dependențelor și multe alte aspecte. Acest lucru face ca dezvoltarea de aplicații să fie mai rapidă și mai ușoară,
+eliminând nevoia de a configura manual o mulțime de detalii tehnice.
