@@ -32,10 +32,23 @@ getConnection (URL, nume de utilizator, parolă); - Are 3 parametri URL, nume de
 getConnection (URL); - Are un singur parametru. URL-ul are și un nume de utilizator și o parolă.
 Exemplu:
 Connection con = DriverManager.getConnection(jdbc:oracle:thin:@localhost:1521:xe,System,Pass123@)
-     Există 3 interfețe cu instrucțiuni disponibile în pachetul java.sqlȘ
-1.Statement statemnt1 = conn.createStatement();
-2.String select_query = “Select * from states where state_id = 1”; PreparedStatement prpstmt = conn.prepareStatement(select_query);
-3.CallableStatementcallStmt = con.prepareCall('{call procedures(?,?)}');
+     Există 3 interfețe cu instrucțiuni disponibile în pachetul java.sql:
+1.Declaration:
+Această interfață este utilizată pentru a implementa instrucțiuni SQL simple fără parametru. Returnează obiectul ResultSet.
+Statement statemnt1 = conn.createStatement();
+2.Prepared statement:
+Această interfață PreparedStatement extinde interfața Statement. Deci, are mai multe caracteristici decât interfața Statement.
+Este folosit pentru a implementa instrucțiuni SQL parametrizate și precompilate. Performanța aplicației crește deoarece
+compilează interogarea o singură dată.
+Este ușor să refolosiți această interfață cu un nou parametru. Acceptă parametrul IN. Chiar și noi putem folosi această
+afirmație fără niciun parametru.
+String select_query = “Select * from states where state_id = 1”; PreparedStatement prpstmt = conn.prepareStatement(select_query);
+3.CallableStatement:
+Interfața CallableStatement extinde interfața PreparedStatement. Deci, are mai multe caracteristici decât interfața
+PreparedStatement. Este folosit pentru a implementa o instrucțiune SQL parametrizată care invocă procedura sau funcția
+în baza de date. O procedură stocată funcționează ca o metodă sau funcție într-o clasă. Suportă parametrii IN și OUT.
+Instanța CallableStatement este creată apelând metoda prepareCall a obiectului Connection.
+CallableStatementcallStmt = con.prepareCall('{call procedures(?,?)}');
      Executarea interogarii:
 1.ResultSet executeQuery (String sql)
 2.int executeUpdate (String sql)
