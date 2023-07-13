@@ -4,43 +4,53 @@ import java.sql.*;
 
 public class SelectJDBC {
     public static void main(String[] args) {
-        // Configurarea conexiunii la baza de date
-        String url = "jdbc:mysql://localhost:3306/baza_de_date";
-        String username = "utilizator";
-        String password = "parola";
+        String url = "jdbc:postgresql://localhost:5432/database_name";
+        String username = "your_username";
+        String password = "your_password";
+
+        Connection connection = null;
+        Statement statement = null;
+        ResultSet resultSet = null;
+
         try {
-            // Încărcarea driverului JDBC
-            Class.forName("com.mysql.jdbc.Driver");
+            // Se încearcă stabilirea conexiunii cu baza de date
+            connection = DriverManager.getConnection(url, username, password);
 
-            // Obținerea conexiunii la baza de date
-            Connection connection = DriverManager.getConnection(url, username, password);
+            // Se creează un obiect Statement pentru a executa interogările SQL
+            statement = connection.createStatement();
 
-            // Declarația SELECT
-            String sql = "SELECT * FROM users";
+            // Se definește interogarea SELECT
+            String query = "SELECT * FROM user";
 
-            // Crearea instrucțiunii și execuția ei
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(sql);
+            // Se execută interogarea și se obține un obiect ResultSet
+            resultSet = statement.executeQuery(query);
 
-            // Parcurgerea rezultatelor
+            // Se parcurge rezultatul și se afișează datele
             while (resultSet.next()) {
-                // Obținerea valorilor din rezultat
-                String user = resultSet.getString("username");
-                String pass = resultSet.getString("password");
+                resultSet.getString("username");
+                resultSet.getString("password");
 
-                // Utilizarea valorilor
-                System.out.println("Username: " + username);
-                System.out.println("Password: " + password);
-                System.out.println("-----------------------");
+                System.out.println("Username: " + username + ", Password: " + password);
             }
-
-            // Închiderea resurselor
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            // Se închid resursele
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+
+                if (statement != null) {
+                    statement.close();
+                }
+
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
-
