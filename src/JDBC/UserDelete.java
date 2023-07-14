@@ -1,45 +1,34 @@
 package JDBC;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class UserDelete {
-    // Metoda pentru ștergerea unui utilizator în baza de date
-    public void deleteUser(String username) {
-        Connection connection = null;
-        PreparedStatement statement = null;
+    public static void main(String[] args) {
+        String url = "jdbc:postgresql://localhost:5432/db_name";
+        String username = "username";
+        String password = "password";
 
-        try {
-            // Obținerea conexiunii la baza de date
-            connection = YourDatabaseConnection.getConnection();
-
-            // Definirea interogării SQL pentru ștergere
-            String query = "DELETE FROM users WHERE username = ?";
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            String sql = "DELETE FROM users WHERE username = ?";
 
             // Crearea obiectului PreparedStatement
-            statement = connection.prepareStatement(query);
+            PreparedStatement statement = connection.prepareStatement(sql);
 
-            // Setarea valorilor parametrilor
-            statement.setString(1, username);
+            // Setarea valorii parametrului
+            statement.setString(1, "john_doe");
 
-            // Executarea interogării de ștergere
-            statement.executeUpdate();
+            // Executarea instrucțiunii SQL
+            int rowsDeleted = statement.executeUpdate();
 
-            System.out.println("Utilizatorul a fost șters din baza de date.");
-        } catch (SQLException e) {
-            System.out.println("A apărut o eroare la ștergerea utilizatorului: " + e.getMessage());
-        } finally {
-            // Închiderea obiectelor PreparedStatement și Connection
-            try {
-                if (statement != null) {
-                    statement.close();
-                }
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                System.out.println("A apărut o eroare la închiderea resurselor: " + e.getMessage());
+            if (rowsDeleted > 0) {
+                System.out.println("Utilizatorul a fost șters cu succes.");
+            } else {
+                System.out.println("Nu s-a găsit utilizatorul specificat.");
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
