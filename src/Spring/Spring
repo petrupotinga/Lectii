@@ -28,3 +28,20 @@ Spring în cadrul aplicațiilor lor existente.
 Spring Boot vine cu setări implicite coerente și oferă suport pentru încorporarea serverului web, gestionarea
 dependențelor și multe alte aspecte. Acest lucru face ca dezvoltarea de aplicații să fie mai rapidă și mai ușoară,
 eliminând nevoia de a configura manual o mulțime de detalii tehnice.
+
+Dezavantaje ale utilizării Spring Framework:
+
+1.Complexitate inițială: Înțelegerea completă a conceptelor și abordărilor din Spring Framework poate necesita timp și
+efort, mai ales pentru dezvoltatorii începători. Există o învățare inițială asociată cu configurarea corectă și
+utilizarea adecvată a framework-ului.
+
+2.Overhead: Deoarece Spring Framework oferă o abordare extensibilă și modulară, acest lucru poate duce la un overhead
+inițial mai mare al aplicației. Dacă nu sunt gestionate corespunzător, anumite funcționalități sau module suplimentare
+pot afecta performanța.
+
+3.Curba de învățare a anumitor module: Spring Framework include o gamă largă de module și tehnologii asociate, cum ar fi
+Spring MVC, Spring Data, Spring Security, etc. Utilizarea și înțelegerea acestor module suplimentare pot necesita o
+curba de învățare suplimentară.
+
+4.Configurare complexă: Deși Spring Framework oferă mai multe opțiuni de configurare și flexibilitate, acest lucru poate
+duce la o configurație complexă și dificil de gestionat, mai ales pentru aplicații mai mari și mai complexe.
