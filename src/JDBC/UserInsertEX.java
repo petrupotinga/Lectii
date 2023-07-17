@@ -6,52 +6,52 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class UserInsertEX {
-    // Informațiile de conexiune la baza de date
-    private static final String DB_URL = "jdbc:postgresql://localhost:5432/nume_baza_de_date";
-    private static final String USERNAME = "nume_utilizator";
-    private static final String PASSWORD = "parola_utilizator";
-
     public static void main(String[] args) {
-        // Creați un obiect User cu valorile corespunzătoare
-        User user = new User("john.doe", "password123");
+        // Definirea informațiilor de conexiune la baza de date
+        String url = "jdbc:postgresql://localhost:5432/NewDB";
+        String username = "postgres";
+        String password = "2015";
 
-        try (Connection connection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD)) {
-            // Definiți interogarea SQL pentru inserarea unui utilizator
-            String insertQuery = "INSERT INTO users (username, password) VALUES (?, ?)";
+        // Crearea obiectului User cu valorile corespunzătoare
+        User user = new User(2, "John");
 
-            try (PreparedStatement statement = connection.prepareStatement(insertQuery)) {
-                // Setarea valorilor parametrilor în declarația SQL pregătită
-                statement.setString(1, user.getUsername());
-                statement.setString(2, user.getPassword());
+        // Încercarea realizării inserării
+        try (Connection connection = DriverManager.getConnection(url, username, password)) {
+            // Definirea instrucțiunii SQL cu parametri
+            String insertQuery = "INSERT INTO person (personid, name) VALUES (?, ?)";
 
-                // Executarea interogării SQL de inserare
-                int rowsInserted = statement.executeUpdate();
+            // Crearea obiectului PreparedStatement
+            try (PreparedStatement preparedStatement = connection.prepareStatement(insertQuery)) {
+                // Setarea valorilor parametrilor în instrucțiunea preparată
+                preparedStatement.setInt(1, user.getPersonId());
+                preparedStatement.setString(2, user.getName());
 
-                if (rowsInserted > 0) {
-                    System.out.println("Inserarea a fost realizată cu succes!");
-                } else {
-                    System.out.println("Inserarea a eșuat!");
-                }
+                // Execuția instrucțiunii de INSERT
+                preparedStatement.executeUpdate();
+
+                System.out.println("Inserarea a fost realizată cu succes.");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
+}
 
-    // Clasa User care conține informațiile despre utilizator
-    static class User {
-        String username;
-        String password;
-        public User(String username, String password) {
-            this.username = username;
-            this.password = password;
-        }
-        public String getUsername() {
-            return username;
-        }
-        public String getPassword() {
-            return password;
-        }
+class User {
+    private int personId;
+    private String name;
+
+    public User(int personId, String name) {
+        this.personId = personId;
+        this.name = name;
+    }
+
+    public int getPersonId() {
+        return personId;
+    }
+
+    public String getName() {
+        return name;
     }
 }
 
