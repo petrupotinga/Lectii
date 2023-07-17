@@ -1,56 +1,71 @@
 package JDBC;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SelectJDBC {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/database_name";
-        String username = "your_username";
-        String password = "your_password";
-
-        Connection connection = null;
-        Statement statement = null;
-        ResultSet resultSet = null;
-
         try {
-            // Se încearcă stabilirea conexiunii cu baza de date
-            connection = DriverManager.getConnection(url, username, password);
+            // Încărcați driverul PostgreSQL JDBC
+            Class.forName("org.postgresql.Driver");
 
-            // Se creează un obiect Statement pentru a executa interogările SQL
-            statement = connection.createStatement();
+            // Definiți detaliile de conexiune la baza de date
+            String url = "jdbc:postgresql://localhost:5432/NewDB";
+            String username = "postgres";
+            String password = "2015";
 
-            // Se definește interogarea SELECT
-            String query = "SELECT * FROM user";
+            // Stabiliți conexiunea
+            try (Connection connection = DriverManager.getConnection(url, username, password)) {
+                // Definiți instrucțiunea SQL
+                String selectQuery = "SELECT personid, name FROM person";
 
-            // Se execută interogarea și se obține un obiect ResultSet
-            resultSet = statement.executeQuery(query);
+                // Creați obiectul PreparedStatement
+                try (PreparedStatement preparedStatement = connection.prepareStatement(selectQuery)) {
+                    // Executați instrucțiunea de SELECT și obțineți rezultatul în ResultSet
+                    try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                        // Parcurgeți rezultatul și creați obiectele Person
+                        List<Person> persons = new ArrayList<>();
+                        while (resultSet.next()) {
+                            int personId = resultSet.getInt("personid");
+                            String name = resultSet.getString("name");
 
-            // Se parcurge rezultatul și se afișează datele
-            while (resultSet.next()) {
-                resultSet.getString("username");
-                resultSet.getString("password");
+                            Person person = new Person(personId, name);
+                            persons.add(person);
+                        }
 
-                System.out.println("Username: " + username + ", Password: " + password);
+                        // Utilizați lista de obiecte Person după necesitate
+                        for (Person person : persons) {
+                            System.out.println(person.getPersonId() + " - " + person.getName());
+                        }
+                    }
+                }
             }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
-        } finally {
-            // Se închid resursele
-            try {
-                if (resultSet != null) {
-                    resultSet.close();
-                }
-
-                if (statement != null) {
-                    statement.close();
-                }
-
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
         }
+    }
+}
+class Person {
+    private int personId;
+    private String name;
+
+    public Person(int personId, String name) {
+        this.personId = personId;
+        this.name = name;
+    }
+
+    public int getPersonId() {
+        return personId;
+    }
+
+    public String getName() {
+        return name;
     }
 }
