@@ -45,3 +45,19 @@ curba de învățare suplimentară.
 
 4.Configurare complexă: Deși Spring Framework oferă mai multe opțiuni de configurare și flexibilitate, acest lucru poate
 duce la o configurație complexă și dificil de gestionat, mai ales pentru aplicații mai mari și mai complexe.
+
+     Inversarea controlului (Inversion of Control) este un principiu în ingineria software care transferă controlul
+obiectelor sau a părților unui program către un container sau un framework. Îl utilizăm cel mai des în contextul
+programării orientate pe obiecte.
+În contrast cu programarea tradițională, în care codul nostru personalizat efectuează apeluri către o bibliotecă, IoC
+permite unui framework să preia controlul fluxului unui program și să efectueze apeluri către codul nostru personalizat.
+Pentru a permite acest lucru, framework-urile utilizează abstracții cu comportament suplimentar încorporat. Dacă dorim
+să adăugăm propriul comportament, trebuie să extindem clasele framework-ului sau să adăugăm propriile clase.
+Avantajele acestei arhitecturi sunt:
+1.decuplarea execuției unei sarcini de implementarea acesteia
+2.ușurința în a schimba între diferite implementări
+3.modularitate sporită a unui program
+4.ușurința în testarea unui program prin izolarea unui component sau simularea dependențelor sale, și permiterea
+comunicării între componente prin intermediul contractelor.
+Putem realiza inversarea controlului prin diverse mecanisme, cum ar fi: design pattern-ul Strategy, pattern-ul Service
+Locator, pattern-ul Factory și Injectarea Dependinței (Dependency Injection - DI).
