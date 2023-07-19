@@ -6,18 +6,18 @@ import java.sql.SQLException;
 
 public class UserDelete {
     public static void main(String[] args) {
-        String url = "jdbc:postgresql://localhost:5432/db_name";
-        String username = "username";
-        String password = "password";
+        String url = "jdbc:postgresql://localhost:5432/NewDB";
+        String username = "postgres";
+        String password = "2015";
 
         try (Connection connection = DriverManager.getConnection(url, username, password)) {
-            String sql = "DELETE FROM users WHERE username = ?";
+            String sql = "DELETE FROM person WHERE name = ?";
 
             // Crearea obiectului PreparedStatement
             PreparedStatement statement = connection.prepareStatement(sql);
 
             // Setarea valorii parametrului
-            statement.setString(1, "john_doe");
+            statement.setString(1, "John");
 
             // Executarea instrucțiunii SQL
             int rowsDeleted = statement.executeUpdate();
