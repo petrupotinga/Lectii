@@ -61,3 +61,39 @@ Avantajele acestei arhitecturi sunt:
 comunicării între componente prin intermediul contractelor.
 Putem realiza inversarea controlului prin diverse mecanisme, cum ar fi: design pattern-ul Strategy, pattern-ul Service
 Locator, pattern-ul Factory și Injectarea Dependinței (Dependency Injection - DI).
+
+Injectarea dependenței (Dependency Injection - DI) este un concept cheie în programarea orientată pe obiecte și face
+parte din principiul Inversion of Control (IoC). În esență, injectarea dependenței este o tehnică prin care obiectele
+nu mai sunt responsabile de crearea sau gestionarea dependențelor de care au nevoie pentru a funcționa corect.
+În schimb, aceste dependențe sunt furnizate (injectate) în obiecte din exterior.
+
+Pentru a înțelege mai bine conceptul, să ne gândim la o clasă A care depinde de funcționalitatea unei alte clase B.
+În loc să creeze o instanță a clasei B în interiorul clasei A, ceea ce ar face ca clasa A să fie strâns legată de
+clasa B, injectarea dependenței permite să se introducă o instanță a clasei B în clasa A, de obicei prin intermediul
+constructorului sau prin metode speciale.
+
+Există mai multe modalități de a realiza injectarea dependenței:
+1.Injectarea prin constructor: Clasa A primește dependența ca parametru în constructorul său. De exemplu:
+
+public class A {
+    private B dependency;
+
+    public A(B dependency) {
+        this.dependency = dependency;
+    }
+
+    // ...
+}
+
+2.Injectarea prin metode: Clasa A primește dependența prin intermediul unei metode speciale. De exemplu:
+public class A {
+    private B dependency;
+
+    public void setDependency(B dependency) {
+        this.dependency = dependency;
+    }
+
+    // ...
+}
+3.Injectarea prin intermediul anotărilor (framework-uri DI): În anumite cadre de lucru (frameworks) sau biblioteci DI,
+se pot folosi anotări pentru a marca dependențele și pentru a automatiza procesul de injectare.
